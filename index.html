@@ -1,2 +1,451 @@
-<h2>Sharah Sahih Muslim</h2>
-<p>Sharah Sahih Muslim is a book of Islamic studies with total 7 volumens</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharah Sahih Muslim | Ashfaq Ali Zardari Store, LLP</title>
+    <meta name="description" content="The complete 7-volume commentary of Sahih Muslim. Download the app for offline reading, bookmarks, and PDF export. Powered by Ashfaq Ali Zardari Store, LLP.">
+    
+    <!-- SEO & Internationalization -->
+    <link rel="canonical" href="https://www.ashfaqalizardaristore.co/">
+    <link rel="alternate" hreflang="en" href="https://www.ashfaqalizardaristore.co/en/">
+    <link rel="alternate" hreflang="ar" href="https://www.ashfaqalizardaristore.co/ar/">
+    <link rel="alternate" hreflang="ur" href="https://www.ashfaqalizardaristore.co/ur/">
+    <link rel="alternate" hreflang="x-default" href="https://www.ashfaqalizardaristore.co/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sharah Sahih Muslim App">
+    <meta property="og:description" content="Read the complete 7-volume commentary offline. Download now.">
+    <meta property="og:image" content="https://www.ashfaqalizardaristore.co/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts for Arabic/Urdu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0B6E4F;
+            --secondary: #D4AF37;
+            --bg-light: #F7F5F0;
+            --text-dark: #1a1a1a;
+            --text-muted: #555;
+            --white: #ffffff;
+            --radius: 12px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-arabic: 'Noto Naskh Arabic', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* RTL Support for Arabic/Urdu */
+        body[dir="rtl"] {
+            font-family: var(--font-arabic);
+        }
+
+        /* Accessibility: Focus indicators */
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary); }
+
+        /* Language Switcher */
+        .lang-switch { display: flex; gap: 10px; }
+        .lang-btn {
+            background: transparent; border: 1px solid #ddd; padding: 5px 12px;
+            border-radius: 20px; cursor: pointer; font-family: inherit;
+        }
+        .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #064a35 100%);
+            color: white; padding: 80px 0; text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 16px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px; }
+        .btn {
+            display: inline-block; padding: 14px 32px; border-radius: 30px;
+            text-decoration: none; font-weight: 700; transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--secondary); color: #1a1a1a; }
+        .btn-outline { border: 2px solid white; color: white; margin-left: 10px; }
+
+        /* Sections */
+        section { padding: 80px 0; }
+        .section-title { font-size: 2rem; text-align: center; margin-bottom: 40px; }
+        .section-title span { color: var(--primary); }
+
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; }
+
+        /* Screenshots */
+        .screenshots-scroll { display: flex; gap: 20px; overflow-x: auto; padding: 20px 0; scrollbar-width: thin; }
+        .screenshot { min-width: 250px; height: 450px; background: #ddd; border-radius: var(--radius); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #888; }
+
+        /* Download Section */
+        .download-box { background: var(--primary); color: white; border-radius: var(--radius); padding: 60px; text-align: center; }
+        .download-box .btn-primary { margin-top: 20px; }
+
+        /* Contact & Support */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contact-info { background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); }
+        .contact-info p { margin-bottom: 10px; }
+        .contact-info a { color: var(--primary); text-decoration: none; }
+
+        /* Other Apps */
+        .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .app-card { background: var(--white); padding: 20px; border-radius: var(--radius); text-align: center; box-shadow: var(--shadow); }
+
+        /* Footer */
+        footer { background: #111; color: #aaa; padding: 40px 0; text-align: center; font-size: 0.9rem; }
+        footer a { color: #ddd; text-decoration: none; margin: 0 10px; }
+
+        /* Cookie Banner (GDPR) */
+        #cookie-banner {
+            position: fixed; bottom: 0; left: 0; right: 0; background: var(--white);
+            padding: 20px; box-shadow: 0 -2px 20px rgba(0,0,0,0.1); z-index: 9999;
+            display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;
+            border-top: 4px solid var(--primary);
+        }
+        #cookie-banner p { margin: 0; font-size: 0.9rem; flex: 1 1 300px; }
+        .cookie-btns { display: flex; gap: 10px; }
+        .cookie-btn { padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 600; border: none; }
+        .cookie-accept { background: var(--primary); color: white; }
+        .cookie-reject { background: #eee; color: #333; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero .btn-outline { margin-left: 0; margin-top: 10px; display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+        <p>We use cookies to improve your experience. By clicking "Accept", you agree to our use of cookies. Read our <a href="/privacy-policy.html" style="color:var(--primary);">Privacy Policy</a>.</p>
+        <div class="cookie-btns">
+            <button class="cookie-btn cookie-reject" onclick="closeCookieBanner()">Reject</button>
+            <button class="cookie-btn cookie-accept" onclick="closeCookieBanner()">Accept</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo" data-i18n="brand">Ashfaq Ali Zardari Store</a>
+            <nav>
+                <ul>
+                    <li><a href="#features" data-i18n="nav_features">Features</a></li>
+                    <li><a href="#screenshots" data-i18n="nav_screens">Screenshots</a></li>
+                    <li><a href="#download" data-i18n="nav_download">Download</a></li>
+                    <li><a href="#apps" data-i18n="nav_apps">Our Apps</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li><a href="/privacy-policy.html" data-i18n="nav_privacy">Privacy</a></li>
+                    <li><a href="/terms.html" data-i18n="nav_terms">Terms</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('ar')">ع</button>
+                <button class="lang-btn" onclick="setLanguage('ur')">اردو</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-i18n="hero_title">Sharah Sahih Muslim</h1>
+            <p data-i18n="hero_subtitle">The complete 7-volume commentary. Download once, read offline forever.</p>
+            <a href="#download" class="btn btn-primary" data-i18n="hero_btn">Get the App</a>
+            <a href="#features" class="btn btn-outline" data-i18n="hero_learn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- App Features Section -->
+    <section id="features">
+        <div class="container">
+            <h2 class="section-title" data-i18n="features_title">App <span>Features</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3 data-i18n="feat1_title">Complete 7 Volumes</h3>
+                    <p data-i18n="feat1_desc">All volumes of Sharah Sahih Muslim in one app. No compromises.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3 data-i18n="feat2_title">Offline Reading</h3>
+                    <p data-i18n="feat2_desc">Download once and read without an internet connection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔖</div>
+                    <h3 data-i18n="feat3_title">Bookmarks & Progress</h3>
+                    <p data-i18n="feat3_desc">Resume exactly where you left off. Save your favorite passages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3 data-i18n="feat4_title">PDF Export</h3>
+                    <p data-i18n="feat4_desc">Share or save any volume as a PDF to your device or cloud storage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 data-i18n="feat5_title">Multi-Language</h3>
+                    <p data-i18n="feat5_desc">Switch between English, Arabic, and Urdu easily.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="feat6_title">Privacy First</h3>
+                    <p data-i18n="feat6_desc">No account needed. Your reading data stays on your device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" style="background: var(--white);">
+        <div class="container">
+            <h2 class="section-title" data-i18n="screens_title">App <span>Screenshots</span></h2>
+            <div class="screenshots-scroll">
+                <div class="screenshot">Home Screen</div>
+                <div class="screenshot">Volume Download</div>
+                <div class="screenshot">PDF Reader</div>
+                <div class="screenshot">Bookmarks</div>
+                <div class="screenshot">Settings</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App Section -->
+    <section id="download">
+        <div class="container">
+            <div class="download-box">
+                <h2 data-i18n="dl_title">Download Sharah Sahih Muslim</h2>
+                <p data-i18n="dl_subtitle">Available now on Google Play. Free to download and use.</p>
+                <a href="https://play.google.com/store/apps/details?id=io.github.ashfaqalizardaristorellp.SharahSahihMuslim" class="btn btn-primary" data-i18n="dl_btn">Get it on Google Play</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Apps Section -->
+    <section id="apps" style="background: var(--white);">
+        <div class="container">
+            <h2 class="section-title" data-i18n="apps_title">Our Other <span>Apps</span></h2>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <h4 data-i18n="app1">Quran Companion</h4>
+                    <p data-i18n="app1_desc">Read, listen, and reflect on the Holy Quran.</p>
+                </div>
+                <div class="app-card">
+                    <h4 data-i18n="app2">Hadith Collection</h4>
+                    <p data-i18n="app2_desc">Authentic Hadith with easy search and sharing.</p>
+                </div>
+                <div class="app-card">
+                    <h4 data-i18n="app3">Daily Duas</h4>
+                    <p data-i18n="app3_desc">Essential supplications for every occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Support Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact_title">Contact & <span>Support</span></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-i18n="contact_company">Ashfaq Ali Zardari Store, LLP</h3>
+                    <p><strong data-i18n="contact_web">Website:</strong> <a href="https://www.ashfaqalizardaristore.co" target="_blank">www.ashfaqalizardaristore.co</a></p>
+                    <p><strong data-i18n="contact_info">General Inquiries:</strong> <a href="mailto:info@ashfaqalizardaristore.co">info@ashfaqalizardaristore.co</a></p>
+                    <p><strong data-i18n="contact_support">App Support:</strong> <a href="mailto:support@ashfaqalizardaristore.co">support@ashfaqalizardaristore.co</a></p>
+                </div>
+                <div class="contact-info">
+                    <h3 data-i18n="support_title">Support Hours</h3>
+                    <p data-i18n="support_hours">Monday – Friday: 9:00 AM – 6:00 PM (PKT)</p>
+                    <p data-i18n="support_response">We aim to respond within 24-48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ashfaq Ali Zardari Store, LLP. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                <a href="/privacy-policy.html" data-i18n="footer_privacy">Privacy Policy</a> |
+                <a href="/terms.html" data-i18n="footer_terms">Terms & Conditions</a> |
+                <a href="/sitemap.xml">Sitemap</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Multi-Language Support -->
+    <script>
+        const translations = {
+            en: {
+                brand: "Ashfaq Ali Zardari Store",
+                nav_features: "Features", nav_screens: "Screenshots", nav_download: "Download",
+                nav_apps: "Our Apps", nav_contact: "Contact", nav_privacy: "Privacy", nav_terms: "Terms",
+                hero_title: "Sharah Sahih Muslim",
+                hero_subtitle: "The complete 7-volume commentary. Download once, read offline forever.",
+                hero_btn: "Get the App", hero_learn: "Learn More",
+                features_title: "App <span>Features</span>",
+                feat1_title: "Complete 7 Volumes", feat1_desc: "All volumes of Sharah Sahih Muslim in one app. No compromises.",
+                feat2_title: "Offline Reading", feat2_desc: "Download once and read without an internet connection.",
+                feat3_title: "Bookmarks & Progress", feat3_desc: "Resume exactly where you left off. Save your favorite passages.",
+                feat4_title: "PDF Export", feat4_desc: "Share or save any volume as a PDF to your device or cloud storage.",
+                feat5_title: "Multi-Language", feat5_desc: "Switch between English, Arabic, and Urdu easily.",
+                feat6_title: "Privacy First", feat6_desc: "No account needed. Your reading data stays on your device.",
+                screens_title: "App <span>Screenshots</span>",
+                dl_title: "Download Sharah Sahih Muslim",
+                dl_subtitle: "Available now on Google Play. Free to download and use.",
+                dl_btn: "Get it on Google Play",
+                apps_title: "Our Other <span>Apps</span>",
+                app1: "Quran Companion", app1_desc: "Read, listen, and reflect on the Holy Quran.",
+                app2: "Hadith Collection", app2_desc: "Authentic Hadith with easy search and sharing.",
+                app3: "Daily Duas", app3_desc: "Essential supplications for every occasion.",
+                contact_title: "Contact & <span>Support</span>",
+                contact_company: "Ashfaq Ali Zardari Store, LLP",
+                contact_web: "Website:", contact_info: "General Inquiries:", contact_support: "App Support:",
+                support_title: "Support Hours", support_hours: "Monday – Friday: 9:00 AM – 6:00 PM (PKT)",
+                support_response: "We aim to respond within 24-48 hours.",
+                footer_privacy: "Privacy Policy", footer_terms: "Terms & Conditions"
+            },
+            ar: {
+                brand: "متجر أشرف علي زرداري",
+                nav_features: "الميزات", nav_screens: "لقطات الشاشة", nav_download: "تحميل",
+                nav_apps: "تطبيقاتنا", nav_contact: "اتصل بنا", nav_privacy: "الخصوصية", nav_terms: "الشروط",
+                hero_title: "شرح صحيح مسلم",
+                hero_subtitle: "التعليق الكامل المكون من 7 مجلدات. قم بالتنزيل مرة واحدة واقرأه دون اتصال بالإنترنت إلى الأبد.",
+                hero_btn: "احصل على التطبيق", hero_learn: "اعرف المزيد",
+                features_title: "ميزات <span>التطبيق</span>",
+                feat1_title: "7 مجلدات كاملة", feat1_desc: "جميع مجلدات شرح صحيح مسلم في تطبيق واحد. لا مساومة.",
+                feat2_title: "القراءة دون اتصال", feat2_desc: "قم بالتنزيل مرة واحدة واقرأه دون اتصال بالإنترنت.",
+                feat3_title: "الإشارات المرجعية والتقدم", feat3_desc: "استأنف من حيث توقفت بالضبط. احفظ مقاطعك المفضلة.",
+                feat4_title: "تصدير PDF", feat4_desc: "شارك أو احفظ أي مجلد كملف PDF على جهازك أو التخزين السحابي.",
+                feat5_title: "متعدد اللغات", feat5_desc: "قم بالتبديل بين الإنجليزية والعربية والأردية بسهولة.",
+                feat6_title: "الخصوصية أولاً", feat6_desc: "لا حاجة لحساب. تبقى بيانات قراءتك على جهازك.",
+                screens_title: "لقطات شاشة <span>التطبيق</span>",
+                dl_title: "قم بتنزيل شرح صحيح مسلم",
+                dl_subtitle: "متوفر الآن على Google Play. مجاني للتنزيل والاستخدام.",
+                dl_btn: "احصل عليه من Google Play",
+                apps_title: "تطبيقاتنا <span>الأخرى</span>",
+                app1: "رفيق القرآن", app1_desc: "اقرأ واستمع وتأمل في القرآن الكريم.",
+                app2: "مجموعة الحديث", app2_desc: "أحاديث صحيحة مع سهولة البحث والمشاركة.",
+                app3: "أدعية يومية", app3_desc: "أدعية أساسية لكل مناسبة.",
+                contact_title: "اتصل <span>بالدعم</span>",
+                contact_company: "متجر أشرف علي زرداري",
+                contact_web: "الموقع الإلكتروني:", contact_info: "الاستفسارات العامة:", contact_support: "دعم التطبيق:",
+                support_title: "ساعات الدعم", support_hours: "الاثنين – الجمعة: 9:00 صباحًا – 6:00 مساءً (PKT)",
+                support_response: "نهدف إلى الرد خلال 24-48 ساعة.",
+                footer_privacy: "سياسة الخصوصية", footer_terms: "الشروط والأحكام"
+            },
+            ur: {
+                brand: "اشرف علی زرداری اسٹور",
+                nav_features: "خصوصیات", nav_screens: "اسکرین شاٹس", nav_download: "ڈاؤن لوڈ",
+                nav_apps: "ہماری ایپس", nav_contact: "رابطہ", nav_privacy: "رازداری", nav_terms: "شرائط",
+                hero_title: "شرح صحیح مسلم",
+                hero_subtitle: "7 جلدوں کی مکمل تفسیر۔ ایک بار ڈاؤن لوڈ کریں، ہمیشہ کے لیے آف لائن پڑھیں۔",
+                hero_btn: "ایپ حاصل کریں", hero_learn: "مزید جانیں",
+                features_title: "ایپ <span>کی خصوصیات</span>",
+                feat1_title: "مکمل 7 جلدیں", feat1_desc: "شرح صحیح مسلم کی تمام جلدیں ایک ایپ میں۔ کوئی سمجھوتہ نہیں۔",
+                feat2_title: "آف لائن پڑھنا", feat2_desc: "ایک بار ڈاؤن لوڈ کریں اور انٹرنیٹ کے بغیر پڑھیں۔",
+                feat3_title: "بک مارکس اور پیش رفت", feat3_desc: "وہیں سے شروع کریں جہاں آپ نے چھوڑا تھا۔ اپنے پسندیدہ اقتباسات محفوظ کریں۔",
+                feat4_title: "PDF ایکسپورٹ", feat4_desc: "کسی بھی جلد کو PDF کے طور پر اپنے ڈیوائس یا کلاؤڈ اسٹوریج پر شیئر یا محفوظ کریں۔",
+                feat5_title: "کثیر اللسانی", feat5_desc: "انگریزی، عربی اور اردو کے درمیان آسانی سے سوئچ کریں۔",
+                feat6_title: "رازداری پہلے", feat6_desc: "کسی اکاؤنٹ کی ضرورت نہیں۔ آپ کا پڑھنے کا ڈیٹا آپ کے ڈیوائس پر رہتا ہے۔",
+                screens_title: "ایپ کے <span>اسکرین شاٹس</span>",
+                dl_title: "شرح صحیح مسلم ڈاؤن لوڈ کریں",
+                dl_subtitle: "ابھی Google Play پر دستیاب ہے۔ ڈاؤن لوڈ اور استعمال کے لیے مفت۔",
+                dl_btn: "Google Play سے حاصل کریں",
+                apps_title: "ہماری <span>دیگر ایپس</span>",
+                app1: "قرآن ساتھی", app1_desc: "قرآن پاک پڑھیں، سنیں اور غور کریں۔",
+                app2: "حدیث مجموعہ", app2_desc: "آسان تلاش اور اشتراک کے ساتھ مستند احادیث۔",
+                app3: "روزانہ دعائیں", app3_desc: "ہر موقع کے لیے ضروری دعائیں۔",
+                contact_title: "رابطہ اور <span>معاونت</span>",
+                contact_company: "اشرف علی زرداری اسٹور",
+                contact_web: "ویب سائٹ:", contact_info: "عمومی استفسارات:", contact_support: "ایپ معاونت:",
+                support_title: "معاونت کے اوقات", support_hours: "پیر – جمعہ: 9:00 صبح – 6:00 شام (PKT)",
+                support_response: "ہمارا ہدف 24-48 گھنٹوں میں جواب دینا ہے۔",
+                footer_privacy: "رازداری کی پالیسی", footer_terms: "شرائط و ضوابط"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Set direction and font for RTL languages
+            document.body.setAttribute('dir', (lang === 'ar' || lang === 'ur') ? 'rtl' : 'ltr');
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        function closeCookieBanner() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            // In production, set a cookie or localStorage flag here to remember the choice.
+        }
+
+        // Basic check to hide banner if already accepted (placeholder)
+        if (localStorage.getItem('cookieConsent') === 'true') {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+        // When accept is clicked, set localStorage (simplified)
+        document.querySelector('.cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'true');
+        });
+    </script>
+</body>
+</html>
